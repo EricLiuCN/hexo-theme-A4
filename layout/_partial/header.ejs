@@ -9,9 +9,23 @@
     <div style="text-align: left;">
 <% } else if(theme.index.titlePosition == "center") { %>
     <div style="text-align: center;"> 
+<% } else if(theme.index.titlePosition == "right") { %>
+    <div style="text-align: right;"> 
+<% } else if(theme.index.titlePosition == "flex") { %>
+    <div class="header flex justify-between"> 
 <% } %>
-        <a class="index-logo" href="<%- url_for() %>"><%= config.title %></a>
-        <div style="margin-bottom: 12px;"> 
+
+        <div class="header-container">
+            <img style="
+            width: 50px;
+            height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="<%- url_for('/img/logo.png') %>" width="10%"></img>
+            <div class="header-content">
+                <a class="logo" href="<%- url_for() %>"><%= config.title %></a> 
+                <span class="description"><%= config.description %></span> 
+            </div>
+            
+        </div>
+        <div style="margin: 14px 0;"> 
             首页
             <% for (name in theme.menu) { %>
                 <% if(name !== '首页' && theme.showInMenu.includes(name)) { %>

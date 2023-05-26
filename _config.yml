@@ -2,33 +2,41 @@ menu:
   首页: /  #需要hexo new page index,在index/index.md填写的内容将会展现在首页上
   文章: /list/ # 需要hexo new page list
   # 添加其他页面格式举例：
-  # 关于: /about/ # 需要hexo new page about
-  # 标签: /tags/ #需要hexo new page tags
-  # 分类: /categories/ # 需要hexo new page categories
+  分类: /categories/ # 需要hexo new page categories
+  标签: /tags/ #需要hexo new page tags
+  关于: /about/ # 需要hexo new page about
   # ...
 
 showInMenu:  # menu 中的哪些页面显示在首页中（“首页”必定显示）
   - 文章
+  - 分类
+  - 标签
+  - 关于
 
 index:  # 首页的页眉页脚
   header: 看过大海的人不会忘记海的广阔 
   footer: Email:123456789@gmail.com # 除了可以填写任何文字外，可以自动邮箱链接化，但需按照这个格式填写：Email:xxx@gmail.com
-  titlePosition: left # center | left  # 首页标题的位置
+  titlePosition: flex # center | left | right | flex  # 首页标题的位置
 
 footerLink: # 底部的链接自定义
-  info: © 1949-2023 China  # info这个单词不能修改，不想使用可为空
+  info: # info这个单词不能修改，不想使用可为空
+    copy: © # copy这个单词不能修改，不想使用可为空
+    year: 2023 # year这个单词不能修改，不想使用可为空
+    site: kaiyuandaima.com # site这个单词不能修改，不想使用可为空
+    link: http://kaiyuandaima.com # link这个单词不能修改，不想使用可为空
+    desc: 版权所有 # desc这个单词不能修改，不想使用可为空
   # 添加链接格式 举例
-  # 友链: /friends/ # 需要hexo new page friends
-  # 联系: /contact/ # 需要hexo new page contact
-  # 支持: /support/ # 需要hexo new page support
+  友链: /friends/ # 需要hexo new page friends
+  联系: /contact/ # 需要hexo new page contact
+  支持: /support/ # 需要hexo new page support
   # ...
 
 post: #除首页之外页面
-  footer: 🌊看过大海的人不会忘记海的广阔🌊   # 底部左侧 自定义信息
+  footer: 凡是过往 皆为序章   # 底部左侧 自定义信息
   themeInfo: true # true | false  # 是否开启 底部右侧 声明本站信息
 
 # 相对于source目录下的头像url
-favicon: /img/favicon.webp
+favicon: /img/logo.png
 
 # ---------------------------------------------------------------------------------------
 # 以上为基本配置，实现了A4主题追求的纯净风
@@ -55,6 +63,7 @@ color:
   postBackGround: "#005454" # 文章页层颜色
   codeBackGround: "black" # 代码块背景颜色
   codeFont: "white" # 代码块字体颜色 
+  hoverColor: "#4e7dde"
 
 # ---------------------------------------------------------------------------------------
 # Comment plugin

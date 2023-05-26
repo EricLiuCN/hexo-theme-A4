@@ -1,9 +1,22 @@
+<% if(theme.index.header != null || theme.index.header == "") {%>
+    <div class="index-header-line" >
+        <span><%= theme.index.header %></span>
+    </div>
+<% } %>
 
-<div class="header">
+<% if(theme.index.titlePosition == "left") { %>
+    <div class="header" style="text-align: left;">
+<% } else if(theme.index.titlePosition == "center") { %>
+    <div class="header" style="text-align: center;"> 
+<% } else if(theme.index.titlePosition == "right") { %>
+    <div class="header" style="text-align: right;"> 
+<% } else if(theme.index.titlePosition == "flex") { %>
+    <div class="header flex justify-between"> 
+<% } %>
     <div class="header-container">
         <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="<%- url_for('/img/favicon.webp') %>" width="10%"></img>
+        width: 50px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="<%- url_for('/img/logo.png') %>" width="10%"></img>
         <div class="header-content">
             <a class="logo" href="<%- url_for() %>"><%= config.title %></a> 
             <span class="description"><%= config.description %></span> 
@@ -12,13 +25,14 @@
     </div>
     
    
-    <ul class="nav">
+    <div style="margin: 14px 0;">
         <% for (name in theme.menu) { %>
             <% if(theme.menu[name].substring(1, theme.menu[name].length - 1) == path.substring(0, path.indexOf("/"))) { %>
-                <li><i><a style="color: #4e7dde;" href="<%- url_for(theme.menu[name]) %>"><%= name %></a></i></li>
+                &nbsp / &nbsp<%= name %>
             <%} else {%>
-                <li><a href="<%- url_for(theme.menu[name]) %>"><%= name %></a></li>
+                <% if(name !== '首页') { %>&nbsp / &nbsp<% } %>
+                <a href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
             <% } %>
         <% } %>
-    </ul>
+    </div>
 </div>

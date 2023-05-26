@@ -1,16 +1,18 @@
 <div class="footer">
-    <% if(path != 'index.html') { %>
-        <span> 
-            <%= theme.footerLink.info %> 
-
-            <% for (name in theme.footerLink) { %>
-                <% if(name != 'info') { %>
-                    / <a href="<%- url_for(theme.footerLink[name]) %>"> <%= name %> </a>
-                <% } %>
-
+    <span> 
+        <% for (name in theme.footerLink) { %>
+            <% if(name == 'info') { %>
+                <%= theme.footerLink.info.copy %> 
+                <%= theme.footerLink.info.year %> 
+                <a href="<%- url_for(theme.footerLink.info.link) %>"> <%= theme.footerLink.info.site %> </a>
+                <%= theme.footerLink.info.desc %> 
             <% } %>
-        </span>
-    <% } %>
+            <% if(name != 'info') { %>
+                / <a href="<%- url_for(theme.footerLink[name]) %>"> <%= name %> </a>
+            <% } %>
+
+        <% } %>
+    </span>
 </div>
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
